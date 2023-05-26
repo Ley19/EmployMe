@@ -14,8 +14,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        app:cardCornerRadius="30dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
         app:cardElevation="20dp">
 
         <LinearLayout
@@ -39,11 +39,35 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/login_email"
+                android:id="@+id/name_email"
                 android:background="@drawable/cuadro_editext"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:padding="8dp"
-                android:hint="Email"
+                android:hint="Nombre"
+                android:drawableLeft="@drawable/ico_perfil"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/first_name"
+                android:background="@drawable/cuadro_editext"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Apellido Materno"
+                android:drawableLeft="@drawable/ico_perfil"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/last_name"
+                android:background="@drawable/cuadro_editext"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Apellido Paterno"
                 android:drawableLeft="@drawable/ico_perfil"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
@@ -56,10 +80,11 @@
                 android:layout_marginTop="20dp"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:hint="Password"
+                android:hint="Contraseña"
                 android:drawableLeft="@drawable/ico_lock"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
+
 
             <Button
                 android:layout_width="match_parent"
@@ -78,7 +103,19 @@
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:layout_gravity="center"
-                android:text="¿Ya tienes una cuenta? Entra Aquí"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/azul"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/forgetPasswordRedirectText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:layout_gravity="center"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/azul"
                 android:textSize="18sp" />
