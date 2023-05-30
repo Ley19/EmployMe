@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     android:background="@drawable/fondoemployme"
     tools:context=".SignUpActivity">
 
@@ -14,9 +13,14 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="20dp">
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -97,28 +101,17 @@
                 app:cornerRadius = "20dp"/>
 
             <TextView
-                android:id="@+id/signUpRedirectText"
+                android:id="@+id/login_RedirectText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
-                android:layout_gravity="center"
                 android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/azul"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/forgetPasswordRedirectText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:padding="8dp"
-                android:layout_gravity="center"
-                android:text=""
-                android:textAlignment="center"
-                android:textColor="@color/azul"
-                android:textSize="18sp" />
 
         </LinearLayout>
 

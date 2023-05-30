@@ -19,21 +19,6 @@ public class forgetPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
 
-
-        TextView signUpRedirectText = findViewById(R.id.signUpRedirectText);
-        String text = "¿Aún no tienes cuenta? <b>Registrate</b>";
-        signUpRedirectText.setText(Html.fromHtml(text));
-        signUpRedirectText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(forgetPassword.this, LoginActivity.class);
-                startActivity(intent);
-
-
-
-            }
-        });
-
         Button sendButton = findViewById(R.id.send_button);
         EditText emailEditText = findViewById(R.id.send_email);
 
