@@ -78,36 +78,107 @@
                 android:id="@+id/forgetPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Animation.Design.BottomSheetDialog"
+                android:layout_gravity="end"
                 android:layout_marginTop="20dp"
-                android:padding="8dp"
-                android:layout_gravity="right"
+                android:layout_marginEnd="20dp"
                 android:text=""
                 android:textColor="@color/azul"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
-         <!--  <com.developer.gbuttons.GoogleSignInButton
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Inicia con Google"
-                android:id="@+id/googleBtn"
-                app:isDarkTheme = "true"
-                android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:padding="8dp"/> -->
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
 
-            <TextView
-                android:id="@+id/signUpRedirectText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <View
+                    android:layout_centerVertical="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#1A000000"
+                    android:layout_toStartOf="@+id/orTxt"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp" />
+
+                <TextView
+                    android:id="@+id/orTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O"
+                    android:layout_centerInParent="true"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    />
+                <View
+                    android:layout_centerVertical="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#1A000000"
+                    android:layout_toEndOf="@+id/orTxt"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/signInWhithGoogle"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/background_gris"
                 android:layout_marginTop="20dp"
-                android:padding="8dp"
-                android:layout_gravity="center"
-                android:text="¿Aún no tienes cuenta? Registrate"
-                android:textAlignment="center"
-                android:textColor="@color/azul"
-                android:textSize="18sp" />
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ico_google"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Inicia sesión con Google"
+                    android:textColor="#E6000000"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/pregunta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="¿Aún no tienes cuenta?"
+                    android:textAlignment="center"
+                    android:textColor="@color/boton"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/signUpRedirectText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:layout_gravity="center"
+                    android:text="Registrate"
+                    android:textAlignment="center"
+                    android:textColor="@color/azul"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
