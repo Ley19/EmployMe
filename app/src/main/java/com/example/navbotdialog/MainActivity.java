@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -18,10 +19,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.navbotdialog.Fragment.FavoritoFragment;
 import com.example.navbotdialog.Fragment.HomeFragment;
 import com.example.navbotdialog.Fragment.NotificacionesFragment;
@@ -65,19 +69,81 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         bottomNavigationView.setBackground(null);
         bottomNavigationView.setOnItemSelectedListener(item -> {
-
+            int animationHeight = 100; // Alto deseado en píxeles
+            int topMargin = 20; // Margen superior en píxeles
             switch (item.getItemId()) {
                 case R.id.nav_home:
                     replaceFragment(new HomeFragment());
+
+                    // Cargar y reproducir la animación Lottie
+                    LottieAnimationView animationView = new LottieAnimationView(this);
+                    animationView.setAnimation(R.raw.home);
+                    animationView.playAnimation();
+
+                    // Obtener el contenedor FrameLayout del fragmento
+                    FrameLayout frameLayout = findViewById(R.id.nav_home);
+                    frameLayout.removeAllViews(); // Limpiar cualquier vista anterior
+
+                    // Establecer parámetros de diseño para el LottieAnimationView con margen superior
+
+
+                    FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+                            FrameLayout.LayoutParams.WRAP_CONTENT,
+                            animationHeight
+                    );
+                    layoutParams.topMargin = topMargin; // Establecer el margen superior
+                    animationView.setLayoutParams(layoutParams);
+
+                    // Agregar el LottieAnimationView al contenedor FrameLayout
+                    frameLayout.addView(animationView);
+
                     break;
-                case R.id.nav_favorito:
+
+
+                case R.id.nav_love:
                     replaceFragment(new FavoritoFragment());
+                    LottieAnimationView loveView = new LottieAnimationView(this);
+                    loveView.setAnimation(R.raw.love);
+                    loveView.playAnimation();
+                    FrameLayout loveLayout = findViewById(R.id.nav_love);
+                    loveLayout.removeAllViews();
+
+                    ViewGroup.LayoutParams layoutParams1 = new FrameLayout.LayoutParams(
+                      FrameLayout.LayoutParams.MATCH_PARENT,
+                      ViewGroup.LayoutParams.MATCH_PARENT
+                    );
+                    loveView.setLayoutParams(layoutParams1);
+                    loveLayout.addView(loveView);
                     break;
                 case R.id.nav_notificaciones:
                     replaceFragment(new NotificacionesFragment());
+                    LottieAnimationView notifyView = new LottieAnimationView(this);
+                    notifyView.setAnimation(R.raw.notify);
+                    notifyView.playAnimation();
+                    FrameLayout notifyLayout = findViewById(R.id.nav_notificaciones);
+                    notifyLayout.removeAllViews();
+
+                    ViewGroup.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(
+                      FrameLayout.LayoutParams.MATCH_PARENT,
+                      FrameLayout.LayoutParams.MATCH_PARENT
+                    );
+                    notifyView.setLayoutParams(layoutParams2);
+                    notifyLayout.addView(notifyView);
+
                     break;
                 case R.id.nav_perfil:
-                    replaceFragment(new PerfilFragment());
+                    replaceFragment(new NotificacionesFragment());
+                    LottieAnimationView profileView = new LottieAnimationView(this);
+                    profileView.setAnimation(R.raw.profile_setup);
+                    profileView.playAnimation();
+                    FrameLayout profileLayout = findViewById(R.id.nav_perfil);
+                    profileLayout.addView(profileView);
+
+                    ViewGroup.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(
+                      FrameLayout.LayoutParams.MATCH_PARENT,
+                      animationHeight
+                    );
+
                     break;
             }
 

@@ -15,7 +15,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
-        app:cardCornerRadius="30dp"
+        app:cardCornerRadius="25dp"
         app:cardElevation="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,15 +127,14 @@
                 android:layout_height="55dp"
                 android:background="@drawable/background_gris"
                 android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 >
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="20dp"
+                    android:paddingRight="10dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/ico_google"
                     />
@@ -145,7 +144,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="Inicia sesión con Google"
-                    android:textColor="#E6000000"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -164,7 +163,7 @@
                     android:layout_gravity="center"
                     android:text="¿Aún no tienes cuenta?"
                     android:textAlignment="center"
-                    android:textColor="@color/boton"
+                    android:textColor="@color/azul"
                     android:textSize="18sp" />
 
                 <TextView
@@ -173,6 +172,7 @@
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:layout_gravity="center"
+                    android:textStyle="bold"
                     android:text="Registrate"
                     android:textAlignment="center"
                     android:textColor="@color/azul"

@@ -46,6 +46,7 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.android.volley:volley:1.2.1'
 
-    //implementation 'com.airbnb.android:lottie:3.4.0'
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 
 }
