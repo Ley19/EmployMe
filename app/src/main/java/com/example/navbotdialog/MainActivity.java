@@ -130,7 +130,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     profileView.playAnimation();
                     FrameLayout profileLayout = findViewById(R.id.nav_perfil);
                     profileLayout.removeAllViews();
-
                     ViewGroup.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(
                        FrameLayout.LayoutParams.MATCH_PARENT,
                        FrameLayout.LayoutParams.MATCH_PARENT
