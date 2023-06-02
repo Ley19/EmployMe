@@ -15,6 +15,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,8 +66,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
 
-        replaceFragment(new HomeFragment());
-
         bottomNavigationView.setBackground(null);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int animationHeight = 100; // Alto deseado en píxeles
@@ -84,9 +83,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     FrameLayout frameLayout = findViewById(R.id.nav_home);
                     frameLayout.removeAllViews(); // Limpiar cualquier vista anterior
 
-                    // Establecer parámetros de diseño para el LottieAnimationView con margen superior
-
-
                     FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
                             FrameLayout.LayoutParams.WRAP_CONTENT,
                             animationHeight
@@ -98,8 +94,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     frameLayout.addView(animationView);
 
                     break;
-
-
                 case R.id.nav_love:
                     replaceFragment(new FavoritoFragment());
                     LottieAnimationView loveView = new LottieAnimationView(this);
@@ -129,24 +123,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     );
                     notifyView.setLayoutParams(layoutParams2);
                     notifyLayout.addView(notifyView);
-
                     break;
                 case R.id.nav_perfil:
                     replaceFragment(new NotificacionesFragment());
                     LottieAnimationView profileView = new LottieAnimationView(this);
-                    profileView.setAnimation(R.raw.profile_setup);
+                    profileView.setAnimation(R.raw.userss);
                     profileView.playAnimation();
                     FrameLayout profileLayout = findViewById(R.id.nav_perfil);
-                    profileLayout.addView(profileView);
+                    profileLayout.removeAllViews();
 
                     ViewGroup.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(
-                      FrameLayout.LayoutParams.MATCH_PARENT,
-                      animationHeight
+                       FrameLayout.LayoutParams.MATCH_PARENT,
+                       FrameLayout.LayoutParams.MATCH_PARENT
                     );
-
+                    profileView.setLayoutParams(layoutParams3);
+                    profileLayout.addView(profileView);
                     break;
             }
-
             return true;
         });
 
@@ -218,9 +211,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
-
     }
-
 
 
 }
